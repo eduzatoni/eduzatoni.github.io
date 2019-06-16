@@ -1,3 +1,5 @@
-<h1>"Modern" portfolio page</h1>
+# Triangles portfolio
 
-<p><a href="https://chippd.github.io/modern/">View demo here</a></p>
+based on the image seen on the recently revamped google sing-in background
+
+<a href="https://chippd.github.io/triangles/" target="_blank">View demo here</a>
