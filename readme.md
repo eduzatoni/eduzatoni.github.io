@@ -1,5 +1,7 @@
-# Triangles portfolio
+# The portfolio that got me a dev job
+[Demo](https://chippd.github.io/)
 
-based on the image seen on the recently revamped google sing-in background
+Hope this helps you out.
 
-<a href="https://chippd.github.io/triangles/" target="_blank">View demo here</a>
+If you need help building a portfolio, check out [mydevportfo..io](https://mydevportfol.io) - I built it to make it quick and easy to build a portfolio using your Github projects. 
+Use the code JOBME for 50% off ;) 
