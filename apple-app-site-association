@@ -1,11 +1,5 @@
 {
-    "applinks": {
-        "apps": [],
-        "details": [
-            {
-                "appID": "6FK63Y5JTM.com.zatoni.CoinScout",
-                "paths": ["*"]
-            }
-        ]
+    "webcredentials": {
+        "apps": ["6FK63Y5JTM.com.zatoni.CoinScout"]
     }
 }
