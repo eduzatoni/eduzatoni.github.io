@@ -3,12 +3,9 @@
         "apps": [],
         "details": [
             {
-                "appID":"6FK63Y5JTM.com.zatoni.CoinScout",
-                "paths": ["/products/*", "/user/"]
+                "appID":"6FK63Y5JTM.com.emr.Deep-Linking",
+                "paths": ["*"]
             }
         ]
-    },
-    "webcredentials": {
-        "apps": ["6FK63Y5JTM.com.zatoni.CoinScout"]
     }
 }
