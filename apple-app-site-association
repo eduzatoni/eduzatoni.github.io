@@ -4,7 +4,7 @@
         "details": [
             {
                 "appID":"6FK63Y5JTM.com.zatoni.CoinScout",
-                "paths": ["*"]
+                "paths": ["/products/*", "/user/"]
             }
         ]
     },
