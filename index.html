@@ -33,7 +33,7 @@
 
 
 		</script>
-
+		
 
 
 	</head>
@@ -231,6 +231,13 @@
 		<script src="js/jquery-3.1.0.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<!-- <script src="js/myScripts.js"></script> -->
+
+		<script>
+			var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+			if (iOS) {
+				window.location = 'https://google.com';
+			}
+		</script>
 
 	</body>
 </html>
