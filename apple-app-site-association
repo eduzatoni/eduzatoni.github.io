@@ -9,6 +9,10 @@
             {
                 "appID":"6FK63Y5JTM.com.zatoni.CoinScout",
                 "paths": ["*"]
+            },
+            {
+                "appID":"6FK63Y5JTM.com.emr.Sample-App",
+                "paths": ["*"]
             }
         ]
     }
