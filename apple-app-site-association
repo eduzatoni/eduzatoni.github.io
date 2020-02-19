@@ -12,7 +12,7 @@
             },
             {
                 "appID":"6FK63Y5JTM.com.emr.Sample-App",
-                "paths": ["*"]
+                "paths": ["NOT /u/*", "*"]
             }
         ]
     }
