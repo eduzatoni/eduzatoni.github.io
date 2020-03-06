@@ -13,6 +13,10 @@
             {
                 "appID":"6FK63Y5JTM.com.emr.Sample-App",
                 "paths": ["NOT /u/un.php", "*"]
+            },
+            {
+                "appID":"6FK63Y5JTM.edu.react.example.EmarsysApp",
+                "paths": ["*"]
             }
         ]
     }
