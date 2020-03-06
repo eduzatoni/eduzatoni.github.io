@@ -15,7 +15,7 @@
                 "paths": ["NOT /u/un.php", "*"]
             },
             {
-                "appID":"6FK63Y5JTM.edu.react.example.EmarsysApp",
+                "appID":"424XYUJV68.edu.react.example.EmarsysApp",
                 "paths": ["*"]
             }
         ]
