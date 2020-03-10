@@ -17,6 +17,10 @@
             {
                 "appID":"424XYUJV68.edu.react.example.EmarsysApp",
                 "paths": ["*"]
+            },
+            {
+                "appID":"424XYUJV68.com.ems.lifestyleLabels",
+                "paths": ["*"]
             }
         ]
     }
