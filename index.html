@@ -4,8 +4,8 @@
 	<head>
 		<script type="text/javascript" src="https://assets.emarsys.net/web-emarsys-sdk/2.2.0/web-emarsys-sdk.js" async></script>
 		<script type="text/javascript">
-			// navigator.serviceWorker.register("/assets/service-worker.js", { scope: "/" }).then(() => {
-			// 	console.log("Install succeeded as the max allowed scope was overriden to '/'.");
+			navigator.serviceWorker.register("/assets/service-worker.js", { scope: "/" }).then(() => {
+				console.log("Install succeeded as the max allowed scope was overriden to '/'.");
 
 				var WebEmarsysSdk = WebEmarsysSdk || []
 				WebEmarsysSdk.push(['init', {
@@ -19,7 +19,7 @@
 							applicationServerPublicKey: 'BBR9_y7sJXX29nouTmykOXgJIXADeWnERTbJ7WiwZkfrz2QCohrk_BtKVp09rcZIxZgnHN0D5GVcQFf04SGEPx4'
 						}
 				}])
-			// });
+			});
 			
 		</script>
 		
