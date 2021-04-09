@@ -14,6 +14,10 @@
 
 		<script type="text/javascript" src="https://assets.emarsys.net/web-emarsys-sdk/2.2.0/web-emarsys-sdk.js" async></script>
 		<script type="text/javascript">
+		navigator.serviceWorker.register("/assets/service-worker.js", { scope: "/" }).catch(() => {
+			console.log("Install succeeded as the max allowed scope was overriden to '/'.");
+		});
+		
 		var WebEmarsysSdk = WebEmarsysSdk || []
 			WebEmarsysSdk.push(['init', {
 				applicationCode: 'EMS9E-F995A', // your Domain code obtained above
