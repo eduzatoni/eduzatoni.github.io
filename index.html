@@ -4,22 +4,18 @@
 	<head>
 		<script type="text/javascript" src="https://assets.emarsys.net/web-emarsys-sdk/2.2.0/web-emarsys-sdk.js" async></script>
 		<script type="text/javascript">
-			navigator.serviceWorker.register("/assets/service-worker.js", { scope: "/" }).then(() => {
-				console.log("Install succeeded as the max allowed scope was overriden to '/'.");
-
-				var WebEmarsysSdk = WebEmarsysSdk || []
-				WebEmarsysSdk.push(['init', {
-						applicationCode: 'EMS9E-F995A', // your Domain code obtained above
-						safariWebsitePushID: 'web.com.yoursite.example', //  unique reverse-domain string, obtained in you Apple Developer Portal
-						defaultNotificationTitle: 'Your Default Title', // sets your default title for push notifications
-						defaultNotificationIcon: 'https://yoursite.com/img/your-logo.png', // URL to your notification icon
-						autoSubscribe: true, // If true, prompts a user to subscribe for pushes upon SDK initialization which is not recommended
-						serviceWorker: {
-							url: '/assets/service-worker.js',
-							applicationServerPublicKey: 'BBR9_y7sJXX29nouTmykOXgJIXADeWnERTbJ7WiwZkfrz2QCohrk_BtKVp09rcZIxZgnHN0D5GVcQFf04SGEPx4'
-						}
-				}])
-			});
+			var WebEmarsysSdk = WebEmarsysSdk || []
+			WebEmarsysSdk.push(['init', {
+					applicationCode: 'EMS9E-F995A', // your Domain code obtained above
+					safariWebsitePushID: 'web.com.yoursite.example', //  unique reverse-domain string, obtained in you Apple Developer Portal
+					defaultNotificationTitle: 'Your Default Title', // sets your default title for push notifications
+					defaultNotificationIcon: 'https://yoursite.com/img/your-logo.png', // URL to your notification icon
+					autoSubscribe: true, // If true, prompts a user to subscribe for pushes upon SDK initialization which is not recommended
+					serviceWorker: {
+						url: '/assets/service-worker.js',
+						applicationServerPublicKey: 'BBR9_y7sJXX29nouTmykOXgJIXADeWnERTbJ7WiwZkfrz2QCohrk_BtKVp09rcZIxZgnHN0D5GVcQFf04SGEPx4'
+					}
+			}])
 			
 		</script>
 		
