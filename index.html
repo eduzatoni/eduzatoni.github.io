@@ -20,26 +20,15 @@
 		</script>
 
 		<script type="text/javascript">
-			// let lastKnownScrollPosition = 0;
-			// let ticking = false;
 
 			function doSomething() {
 				// WebEmarsysSdk.subscribe()
 				console.log("scroll")
 			}
 
-			// document.addEventListener('scroll', function(e) {
-			// 	lastKnownScrollPosition = window.scrollY;
-			// 	console.log("scroll", scrollPos)
-			// 	if (!ticking) {
-			// 		window.requestAnimationFrame(function() {
-			// 			doSomething(lastKnownScrollPosition);
-			// 			ticking = false;
-			// 		});
-
-			// 		ticking = true;
-			// 	}
-			// });	
+			document.addEventListener('scroll', function(e) {
+				doSomething();
+			});	
 		</script>
 		
 		<meta charset="utf-8">
