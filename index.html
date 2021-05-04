@@ -6,18 +6,16 @@
 		<script type="text/javascript">
 			var WebEmarsysSdk = WebEmarsysSdk || []
 			WebEmarsysSdk.push(['init', {
-					applicationCode: 'EMS9E-F995A', // your Domain code obtained above
-					safariWebsitePushID: 'web.com.yoursite.example', //  unique reverse-domain string, obtained in you Apple Developer Portal
-					defaultNotificationTitle: 'Your Default Title', // sets your default title for push notifications
-					defaultNotificationIcon: 'https://yoursite.com/img/your-logo.png', // URL to your notification icon
-					autoSubscribe: false, // If true, prompts a user to subscribe for pushes upon SDK initialization which is not recommended
-					serviceWorker: {
-						url: '/service-worker.js',
-						applicationServerPublicKey: 'BBR9_y7sJXX29nouTmykOXgJIXADeWnERTbJ7WiwZkfrz2QCohrk_BtKVp09rcZIxZgnHN0D5GVcQFf04SGEPx4'
-					}
+				applicationCode: 'EMS9E-F995A', // your Domain code obtained above
+				safariWebsitePushID: 'web.com.yoursite.example', //  unique reverse-domain string, obtained in you Apple Developer Portal
+				defaultNotificationTitle: 'Your Default Title', // sets your default title for push notifications
+				defaultNotificationIcon: 'https://yoursite.com/img/your-logo.png', // URL to your notification icon
+				autoSubscribe: false, // If true, prompts a user to subscribe for pushes upon SDK initialization which is not recommended
+				serviceWorker: {
+					url: 'service-worker.js',
+					applicationServerPublicKey: 'BBR9_y7sJXX29nouTmykOXgJIXADeWnERTbJ7WiwZkfrz2QCohrk_BtKVp09rcZIxZgnHN0D5GVcQFf04SGEPx4'
+				}
 			}])
-			
-			
 		</script>
 		
 		<meta charset="utf-8">
