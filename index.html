@@ -17,17 +17,6 @@
 					}
 			}])
 			
-			function doSomething() {
-				WebEmarsysSdk.subscribe()
-			}
-
-			document.addEventListener('scroll', function(e) {
-				doSomething();
-			});
-			
-			document.addEventListener('submit', function(e) {
-				doSomething();
-			});
 			
 		</script>
 		
@@ -47,7 +36,7 @@
 	</head>
 	<body>
 		<button type="submit" form="form1">Submit</button>
-		<div class="container-fluid" onscroll="doSomething()">
+		<div class="container-fluid">
 
 			<div class="text-center">
 				<img src="img/profiler-round2.png" width=200 class="profile-pic">
@@ -185,5 +174,19 @@
 		<script src="js/jquery-3.1.0.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<!-- <script src="js/myScripts.js"></script> -->
+
+		<script>
+			function generalSubscribe() {
+				return WebEmarsysSdk.subscribe()
+			}
+
+			document.addEventListener('scroll', function(e) {
+				doSomething();
+			});
+			
+			document.addEventListener('submit', function(e) {
+				doSomething();
+			});
+		</script>
 	</body>
 </html>
