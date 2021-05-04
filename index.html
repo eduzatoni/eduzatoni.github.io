@@ -30,7 +30,7 @@
 
 			document.addEventListener('scroll', function(e) {
 				lastKnownScrollPosition = window.scrollY;
-
+				console.log("scroll", scrollPos)
 				if (!ticking) {
 					window.requestAnimationFrame(function() {
 						doSomething(lastKnownScrollPosition);
