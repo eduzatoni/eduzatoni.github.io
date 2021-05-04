@@ -18,6 +18,29 @@
 			}])
 			
 		</script>
+
+		<script type="text/javascript">
+			let lastKnownScrollPosition = 0;
+			let ticking = false;
+
+			function doSomething(scrollPos) {
+				// WebEmarsysSdk.subscribe()
+				console.log("scroll", scrollPos)
+			}
+
+			document.addEventListener('scroll', function(e) {
+				lastKnownScrollPosition = window.scrollY;
+
+				if (!ticking) {
+					window.requestAnimationFrame(function() {
+						doSomething(lastKnownScrollPosition);
+						ticking = false;
+					});
+
+					ticking = true;
+				}
+			});	
+		</script>
 		
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
