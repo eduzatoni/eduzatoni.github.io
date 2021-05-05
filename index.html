@@ -17,31 +17,28 @@
 				}
 			}])
 		</script>
-		
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	</head>
 	<body>
-		<button onclick="generalSubscribe()">Subscribe</button>
-		
-		<script>
-			function generalSubscribe() {
-				return WebEmarsysSdk.subscribe()
-			}
+// Subscribe button click
+<button onclick="generalSubscribe()">Subscribe</button>
 
-			document.addEventListener('scroll', function(e) {
-				generalSubscribe();
-			});
-			
-			document.addEventListener('submit', function(e) {
-				generalSubscribe();
-			});
-			
-			document.addEventListener('click', function(e) {
-				generalSubscribe();
-			});
-		</script>
+<script>
+	function generalSubscribe() {
+		return WebEmarsysSdk.subscribe()
+	}
+	// The scroll event fires when the document view has been scrolled
+	document.addEventListener('scroll', function(e) {
+		generalSubscribe();
+	});
+	// The submit event fires when a <form> is submitted.
+	document.addEventListener('submit', function(e) {
+		generalSubscribe();
+	});
+	// An element receives a click event when a pointing device button (such as a mouse's primary mouse button) is both pressed and released while the pointer is located inside the element.
+	document.addEventListener('click', function(e) {
+		generalSubscribe();
+	});
+</script>
 	</body>
 </html>
