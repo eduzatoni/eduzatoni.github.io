@@ -19,10 +19,13 @@
 		</script>
 		
 		<script type="text/javascript">
-			WebEmarsysSdk.login({
-			  fieldId: 3,
-			  fieldValue: "eduardo.zatoni@emarsys.com"
-			})
+			WebEmarsysSdk.push(function() {
+				console.log('EVENT: onReady');
+				WebEmarsysSdk.login({
+					fieldId: 3,
+					fieldValue: "eduardo.zatoni@emarsys.com"
+				})
+			});
 		</script>
 	</head>
 	<body>
