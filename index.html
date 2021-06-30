@@ -20,10 +20,10 @@
 		
 		<script type="text/javascript">
 			WebEmarsysSdk.push(function() {
-				console.log('EVENT: onReady');
+				var sc_customer = getUrlVars()["sc_customer"];
 				WebEmarsysSdk.login({
 					fieldId: 3,
-					fieldValue: "eduardo.zatoni@emarsys.com"
+					fieldValue: sc_customer
 				})
 			});
 		</script>
