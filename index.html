@@ -20,18 +20,22 @@
 		
 		<script type="text/javascript">
 			WebEmarsysSdk.push(function() {
-				var sc_customer = getUrlVars()["sc_customer"];
-				WebEmarsysSdk.login({
-					fieldId: 3,
-					fieldValue: sc_customer
-				})
+				login();
 			});
 		</script>
 	</head>
 	<body>
-<button onclick="generalSubscribe()">Subscribe</button>
+<button onclick="login()">Subscribe</button>
 
 <script>
+	function generalSubscribe() {
+		var sc_customer = getUrlVars()["sc_customer"];
+		WebEmarsysSdk.login({
+			fieldId: 3,
+			fieldValue: sc_customer
+		})
+	}
+	
 	function generalSubscribe() {
 		return WebEmarsysSdk.subscribe()
 	}
