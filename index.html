@@ -25,32 +25,33 @@
 		</script>
 	</head>
 	<body>
-<button onclick="login()">Subscribe</button>
+		<button onclick="generalSubscribe()">Subscribe</button>
+		<button onclick="login()">Login</button>
 
-<script>
-	function generalSubscribe() {
-		var sc_customer = getUrlVars()["sc_customer"];
-		WebEmarsysSdk.login({
-			fieldId: 3,
-			fieldValue: sc_customer
-		})
-	}
-	
-	function generalSubscribe() {
-		return WebEmarsysSdk.subscribe()
-	}
-	// The scroll event fires when the document view has been scrolled
-	document.addEventListener('scroll', function(e) {
-		generalSubscribe();
-	});
-	// The submit event fires when a <form> is submitted.
-	document.addEventListener('submit', function(e) {
-		generalSubscribe();
-	});
-	// An element receives a click event when a pointing device button (such as a mouse's primary mouse button) is both pressed and released while the pointer is located inside the element.
-	document.addEventListener('click', function(e) {
-		generalSubscribe();
-	});
-</script>
+		<script>
+			function login() {
+				var sc_customer = getUrlVars()["sc_customer"];
+				WebEmarsysSdk.login({
+					fieldId: 3,
+					fieldValue: sc_customer
+				})
+			}
+
+			function generalSubscribe() {
+				return WebEmarsysSdk.subscribe()
+			}
+			// The scroll event fires when the document view has been scrolled
+			document.addEventListener('scroll', function(e) {
+				generalSubscribe();
+			});
+			// The submit event fires when a <form> is submitted.
+			document.addEventListener('submit', function(e) {
+				generalSubscribe();
+			});
+			// An element receives a click event when a pointing device button (such as a mouse's primary mouse button) is both pressed and released while the pointer is located inside the element.
+			document.addEventListener('click', function(e) {
+				generalSubscribe();
+			});
+		</script>
 	</body>
 </html>
