@@ -32,7 +32,7 @@
 			
 			function login() {
 				var sc_customer = getUrlVars()["sc_customer"];
-				if sc_customer != null {
+				if (sc_customer != null) {
 					WebEmarsysSdk.login({
 						fieldId: 3,
 						fieldValue: sc_customer
