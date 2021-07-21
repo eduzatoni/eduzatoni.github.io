@@ -19,6 +19,16 @@
 		</script>
 		
 		<script type="text/javascript">
+			function spawnNotification(theTitle,theBody,shouldRequireInteraction) {
+			  var options = {
+			      body: theBody,
+			      requireInteraction: true
+			  }
+			  var n = new Notification(theTitle,options);
+			}
+		</script>
+		
+		<script type="text/javascript">
 			WebEmarsysSdk.push(function() {
 				login();
 			});
