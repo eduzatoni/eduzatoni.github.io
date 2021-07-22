@@ -767,16 +767,9 @@
         o.onPush(e)
     })), 
     self.addEventListener("notificationclick", (e => o.onNotificationClick(e))), 
-    // self.addEventListener("visibilitychange", (e => o.onNotificationVisibilityChange(e))), 
+    self.addEventListener("visibilitychange", (e => o.onNotificationVisibilityChange(e))), 
     self.addEventListener("install", (e => o.onInstall(e))), 
     self.addEventListener("pushsubscriptionchange", (e => o.onSubscriptionChange(e)))
-
-    self.addEventListener('visibilitychange', function() {
-        if (document.visibilityState === 'visible') {
-          // The tab has become visible so clear the now-stale Notification.
-          e.notification.close();
-        }
-    });
 }, function(e, t, i) {
     "use strict";
     var n = this && this.__importDefault || function(e) {
@@ -877,7 +870,7 @@
                 image: s,
                 actions: r,
                 vibrate: [400, 100, 400],
-                requireInteraction: true
+                priority: 2
             };
             return self.registration.showNotification(i, a)
         }
