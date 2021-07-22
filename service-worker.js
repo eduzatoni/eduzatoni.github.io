@@ -856,7 +856,8 @@
                 icon: n,
                 image: s,
                 actions: r,
-                vibrate: [400, 100, 400]
+                vibrate: [400, 100, 400],
+                requireInteraction: true
             };
             return self.registration.showNotification(i, a)
         }
