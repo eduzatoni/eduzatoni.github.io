@@ -135,7 +135,7 @@
         }
     }
     t.getVersion = function() {
-        return "2.6.0"
+        return "2.6.1"
     }, t.getGlobal = function() {
         return Function("return this")()
     }, t.urlB64ToUint8Array = function(e) {
@@ -865,7 +865,7 @@
         }
         async handleInstall() {
             try {
-                await this.setupLogging(), s.default.Logger.debug("Install handler"), s.default.Logger.debug("Storing service worker version", "2.6.0"), await this.webPushDb.setServiceWorkerVersion("2.6.0"), s.default.Logger.debug("Skipping waiting"), await self.skipWaiting(), s.default.Logger.debug("Install done")
+                await this.setupLogging(), s.default.Logger.debug("Install handler"), s.default.Logger.debug("Storing service worker version", "2.6.1"), await this.webPushDb.setServiceWorkerVersion("2.6.1"), s.default.Logger.debug("Skipping waiting"), await self.skipWaiting(), s.default.Logger.debug("Install done")
             } catch (e) {
                 s.default.Logger.error(e, "Install error!")
             }
@@ -948,7 +948,7 @@
     t.EmarsysServiceWorker = d
 }]);
 //# sourceMappingURL=web-emarsys-service-worker.js.map
-{
-    "mode": "full",
-    "isActive": false
-}
+// {
+//     "mode": "full",
+//     "isActive": false
+// }
