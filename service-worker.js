@@ -765,7 +765,18 @@
         o = n.EmarsysServiceWorker.create(a);
     self.addEventListener("push", (e => {
         o.onPush(e)
-    })), self.addEventListener("notificationclick", (e => o.onNotificationClick(e))), self.addEventListener("visibilitychange", (e => o.onNotificationVisibilityChange(e))), self.addEventListener("install", (e => o.onInstall(e))), self.addEventListener("pushsubscriptionchange", (e => o.onSubscriptionChange(e)))
+    })), 
+    self.addEventListener("notificationclick", (e => o.onNotificationClick(e))), 
+    // self.addEventListener("visibilitychange", (e => o.onNotificationVisibilityChange(e))), 
+    self.addEventListener("install", (e => o.onInstall(e))), 
+    self.addEventListener("pushsubscriptionchange", (e => o.onSubscriptionChange(e)))
+
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'visible') {
+          // The tab has become visible so clear the now-stale Notification.
+          e.notification.close();
+        }
+    });
 }, function(e, t, i) {
     "use strict";
     var n = this && this.__importDefault || function(e) {
