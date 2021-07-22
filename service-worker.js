@@ -771,7 +771,7 @@
     self.addEventListener("install", (e => o.onInstall(e))), 
     self.addEventListener("pushsubscriptionchange", (e => o.onSubscriptionChange(e)))
 
-    document.addEventListener('visibilitychange', function() {
+    self.addEventListener('visibilitychange', function() {
         if (document.visibilityState === 'visible') {
           // The tab has become visible so clear the now-stale Notification.
           e.notification.close();
