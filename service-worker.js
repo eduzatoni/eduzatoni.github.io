@@ -765,7 +765,7 @@
         o = n.EmarsysServiceWorker.create(a);
     self.addEventListener("push", (e => {
         o.onPush(e)
-    })), self.addEventListener("notificationclick", (e => o.onNotificationClick(e))), self.addEventListener("install", (e => o.onInstall(e))), self.addEventListener("pushsubscriptionchange", (e => o.onSubscriptionChange(e)))
+    })), self.addEventListener("notificationclick", (e => o.onNotificationClick(e))), self.addEventListener("visibilitychange", (e => o.onNotificationVisibilityChange(e))), self.addEventListener("install", (e => o.onInstall(e))), self.addEventListener("pushsubscriptionchange", (e => o.onSubscriptionChange(e)))
 }, function(e, t, i) {
     "use strict";
     var n = this && this.__importDefault || function(e) {
@@ -798,6 +798,9 @@
         onNotificationClick(e) {
             e.waitUntil(this._onNotificationClick(e))
         }
+        onNotificationVisibilityChange(e) {
+            e.waitUntil(this._onNotificationVisibilityChange(e))
+        }
         onSubscriptionChange(e) {
             e.waitUntil(this._onSubscriptionChange())
         }
@@ -819,6 +822,12 @@
             }
             const n = [];
             return i && (s.default.Logger.debug("Opening url: " + i), n.push(self.clients.openWindow(i))), n.push(this.reportOpen(t)), Promise.all(n)
+        }
+        async _onNotificationVisibilityChange(e) {
+            if (document.visibilityState === 'visible') {
+                await new Promise(resolve => setTimeout(resolve, 10000));
+                e.notification.close();
+            }
         }
         async _onSubscriptionChange() {
             try {
