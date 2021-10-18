@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<script type="text/javascript" src="https://assets.emarsys.net/web-emarsys-sdk/2.6.1/web-emarsys-sdk.js" async></script>
+		<script type="text/javascript" src="https://assets.emarsys.net/web-emarsys-sdk/3.1.2/web-emarsys-sdk.js" async></script>
 		<script type="text/javascript">
 			var WebEmarsysSdk = WebEmarsysSdk || []
 			WebEmarsysSdk.push(['init', {
@@ -17,27 +17,6 @@
 				}
 			}])
 		</script>
-		
-		<script type="text/javascript">
-			function spawnNotification(theTitle,theBody,shouldRequireInteraction) {
-				var options = {
-					body: theBody,
-					requireInteraction: true
-				}
-				var n = new Notification(theTitle,options);
-				
-// 				await new Promise(resolve => setTimeout(resolve, 3000));
-				
-// 				n.close();
-				
-			}
-		</script>
-		
-		<script type="text/javascript">
-			WebEmarsysSdk.push(function() {
-				login();
-			});
-		</script>
 	</head>
 	<body>
 		<button onclick="generalSubscribe()">Subscribe</button>
@@ -46,21 +25,10 @@
 		<script>
 			
 			function login() {
-				var sc_customer = getUrlVars()["sc_customer"];
-				if (sc_customer != null) {
-					WebEmarsysSdk.login({
-						fieldId: 3,
-						fieldValue: sc_customer
-					})
-				}
-			}
-			
-			function getUrlVars() {
-				var vars = {};
-				var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-				vars[key] = value;
-				});
-				return vars;
+				WebEmarsysSdk.login({
+					fieldId: 3,
+					fieldValue: sc_customer
+				})
 			}
 
 			function generalSubscribe() {
