@@ -1,9 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.ems.lifestylelabels",
-    "sha256_cert_fingerprints":
-    ["11:B1:5F:22:60:5D:E1:65:A5:A9:ED:2C:58:6B:FC:E2:4B:B3:B5:56:E4:06:07:8C:C4:08:E7:02:2E:0B:8F:E2"]
-  }
-}]
