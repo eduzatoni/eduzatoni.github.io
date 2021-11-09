@@ -1,54 +1,10 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<script type="text/javascript" src="https://assets.emarsys.net/web-emarsys-sdk/3.1.2/web-emarsys-sdk.js" async></script>
-		<script type="text/javascript">
-			var WebEmarsysSdk = WebEmarsysSdk || []
-			WebEmarsysSdk.push(['init', {
-				applicationCode: 'EMS9E-F995A', // your Domain code obtained above
-				safariWebsitePushID: 'web.com.yoursite.example', //  unique reverse-domain string, obtained in you Apple Developer Portal
-				defaultNotificationTitle: 'Your Default Title', // sets your default title for push notifications
-				defaultNotificationIcon: 'https://yoursite.com/img/your-logo.png', // URL to your notification icon
-				autoSubscribe: false, // If true, prompts a user to subscribe for pushes upon SDK initialization which is not recommended
-				serviceWorker: {
-					url: 'service-worker.js',
-					applicationServerPublicKey: 'BBR9_y7sJXX29nouTmykOXgJIXADeWnERTbJ7WiwZkfrz2QCohrk_BtKVp09rcZIxZgnHN0D5GVcQFf04SGEPx4'
-				}
-			}])
-		</script>
-	</head>
-	<body>
-		<button onclick="generalSubscribe()">Subscribe</button>
-		<button onclick="login()">Login</button>
-
-		<script>
-			
-			function login() {
-				WebEmarsysSdk.login({
-					fieldId: 3,
-					fieldValue: 'eduardo.zatoni@emarsys.com'
-				})
-				console.log('Logged in!')
-			}
-
-			function generalSubscribe() {
-				console.log('Subscribed!')
-				return WebEmarsysSdk.subscribe()
-				
-			}
-// 			// The scroll event fires when the document view has been scrolled
-// 			document.addEventListener('scroll', function(e) {
-// 				generalSubscribe();
-// 			});
-// 			// The submit event fires when a <form> is submitted.
-// 			document.addEventListener('submit', function(e) {
-// 				generalSubscribe();
-// 			});
-// 			// An element receives a click event when a pointing device button (such as a mouse's primary mouse button) is both pressed and released while the pointer is located inside the element.
-// 			document.addEventListener('click', function(e) {
-// 				generalSubscribe();
-// 			});
-		</script>
-	</body>
+  <head>
+  </head>
+  <body>
+    <button onclick="subscribe()">Subscribe</button>
+    <button onclick="login()">Login</button>
+  </body>
 </html>
