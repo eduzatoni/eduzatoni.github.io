@@ -24,11 +24,15 @@ var WebEmarsysSdk = WebEmarsysSdk || []
     <script>
       
       function login() {
-        
+        WebEmarsysSdk.login({
+  fieldId: 3,
+  fieldValue: "eduardo.zatoni@emarsys.com"
+}
+)
       }
 
       function subscribe() {
-        
+        WebEmarsysSdk.subscribe()
       }
     
     </script>
