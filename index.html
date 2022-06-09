@@ -2,9 +2,10 @@
 
 <html>
   <head>
+    <link rel="manifest" href="manifest.json">
     <script type="text/javascript" src="https://assets.emarsys.net/web-emarsys-sdk/3.1.2/web-emarsys-sdk.js" async></script>
-<script type="text/javascript">
-var WebEmarsysSdk = WebEmarsysSdk || []
+    <script type="text/javascript">
+      var WebEmarsysSdk = WebEmarsysSdk || []
       WebEmarsysSdk.push(['init', {
         applicationCode: 'EMS9E-F995A', // your Domain code obtained above
         defaultNotificationTitle: 'Your Default Title', // sets your default title for push notifications
@@ -15,26 +16,23 @@ var WebEmarsysSdk = WebEmarsysSdk || []
           applicationServerPublicKey: 'BBR9_y7sJXX29nouTmykOXgJIXADeWnERTbJ7WiwZkfrz2QCohrk_BtKVp09rcZIxZgnHN0D5GVcQFf04SGEPx4'
         }
       }])
-</script>
+    </script>
   </head>
   <body>
     <button onclick="subscribe()">Subscribe</button>
     <button onclick="login()">Login</button>
     
     <script>
-      
       function login() {
         WebEmarsysSdk.login({
-  fieldId: 3,
-  fieldValue: "eduardo.zatoni@emarsys.com"
-}
-)
+          fieldId: 3,
+          fieldValue: "eduardo.zatoni@emarsys.com"
+        })
       }
 
       function subscribe() {
         WebEmarsysSdk.subscribe()
       }
-    
     </script>
   </body>
 </html>
