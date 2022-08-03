@@ -27,13 +27,21 @@
               <button class="e-btn e-btn-secondary" onclick="#">Subscribe</button>
             </p>
             <p>
-              <input class="e-input e-input-small" type="text" name="contactFieldId" placeholder="Field ID">
-              <input class="e-input e-input-large" type="text" name="contactFieldValue" placeholder="Contact value">
-              <button id="loginButton" class="e-btn e-btn-primary" onclick="#">Set Contact</button>
+              <div>
+                <form id="loginForm">
+                  <input class="e-input e-input-small" type="text" name="contactFieldId" placeholder="Field ID">
+                  <input class="e-input e-input-large" type="text" name="contactFieldValue" placeholder="Contact value">
+                  <button id="loginButton" class="e-btn e-btn-primary" type="submit">Set Contact</button>
+                </form>
+              </div>
             </p>
             <p>
-              <input class="e-input e-input-large" type="text" name="customEvent" placeholder="Custom event">
-              <button id="loginButton" class="e-btn e-btn-primary" onclick="#">Track Custom Event</button>
+              <div>
+                <form id="customEventForm">
+                  <input class="e-input e-input-large" type="text" name="customEvent" placeholder="Custom event">
+                  <button id="loginButton" class="e-btn e-btn-primary" type="submit">Track Custom Event</button>
+                </form>
+              </div>
             </p>
           </div>
         </div>
@@ -42,7 +50,28 @@
       </header>
 
       <script>
+        $('#loginForm').submit(function(e) {
+          e.preventDefault();
+          const fieldId = $('#loginForm input[name="contactFieldId"]').val()
+          const fieldValue = $('#loginForm input[name="contactFieldValue"]').val()
+          const contactInfo = { 
+            fieldId: Number(fieldId), 
+            fieldValue: fieldValue
+          }
+          console.log('Contact Info: ' + JSON.stringify(contactInfo))
+          // WebEmarsysSdk.login(contactInfo);
+        })
 
+        $('#customEventForm').submit(function(e) {
+          e.preventDefault();
+          const customEvent = $('#customEventForm input[name="customEvent"]').val()
+          console.log('Custom Event: ' + customEvent)
+          // WebEmarsysSdk.trackCustomEvent(customEvent)
+        })
+
+        function subscribe() {
+          // WebEmarsysSdk.subscribe();
+        }
       </script>
     </body>
 </html>
