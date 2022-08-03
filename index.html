@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <link rel="manifest" href="manifest.json">
-    <script type="text/javascript" src="https://assets.emarsys.net/web-emarsys-sdk/3.1.2/web-emarsys-sdk.js" async></script>
-    <script type="text/javascript">
-      var WebEmarsysSdk = WebEmarsysSdk || []
-      WebEmarsysSdk.push(['init', {
-        applicationCode: 'EMS9E-F995A', // your Domain code obtained above
-        defaultNotificationTitle: 'Your Default Title', // sets your default title for push notifications
-        defaultNotificationIcon: 'https://yoursite.com/img/your-logo.png', // URL to your notification icon
-        autoSubscribe: false, // If true, prompts a user to subscribe for pushes upon SDK initialization which is not recommended
-        serviceWorker: {
-          url: 'sw.js',
-          applicationServerPublicKey: 'BBR9_y7sJXX29nouTmykOXgJIXADeWnERTbJ7WiwZkfrz2QCohrk_BtKVp09rcZIxZgnHN0D5GVcQFf04SGEPx4'
-        }
-      }])
+<head>
+    <title>Web Push Training</title>
+    <script
+        src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous">
     </script>
-  </head>
-  <body>
-    <button onclick="subscribe()">Subscribe</button>
-    <button onclick="login()">Login</button>
-    
-    <script>
-      function login() {
-        WebEmarsysSdk.login({
-          fieldId: 3,
-          fieldValue: "eduardo.zatoni@emarsys.com"
-        })
-      }
+    <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://redirector.gservice.emarsys.net/ui/latest/js/app.js"></script>
+    <link rel='stylesheet' href='https://redirector.gservice.emarsys.net/ui/latest/css/app.css'>
+    <link rel='stylesheet' href='style.css'>
+</head>
+    <body>
+      <header class="header">
+        <div class="e-container">
+          <div class="e-box">
+            <h1>
+              Web Push Training
+            </h1>
+            <p>
+              <button class="e-btn e-btn-secondary" onclick="#">Subscribe</button>
+            </p>
+            <p>
+              <input class="e-input e-input-small" type="text" name="contactFieldId" placeholder="Field ID">
+              <input class="e-input e-input-large" type="text" name="contactFieldValue" placeholder="Contact value">
+              <button id="loginButton" class="e-btn e-btn-primary" onclick="#">Set Contact</button>
+            </p>
+            <p>
+              <input class="e-input e-input-large" type="text" name="customEvent" placeholder="Custom event">
+              <button id="loginButton" class="e-btn e-btn-primary" onclick="#">Track Custom Event</button>
+            </p>
+          </div>
+        </div>
+        <div id="footer">
+        </div>
+      </header>
 
-      function subscribe() {
-        WebEmarsysSdk.subscribe()
-      }
-    </script>
-  </body>
+      <script>
+
+      </script>
+    </body>
 </html>
