@@ -13,8 +13,21 @@
         crossorigin="anonymous">
     </script>
     <script src="https://redirector.gservice.emarsys.net/ui/latest/js/app.js"></script>
+    <script type="text/javascript" src="https://assets.emarsys.net/web-emarsys-sdk/4.2.1/web-emarsys-sdk.js" async></script>
+    <script type="text/javascript">
+      var WebEmarsysSdk = WebEmarsysSdk || []
+      WebEmarsysSdk.push(['init', {
+        applicationCode: 'EMS9E-F995A', // your Domain code obtained above
+        defaultNotificationTitle: 'Your Default Title', // sets your default title for push notifications
+        defaultNotificationIcon: 'https://yoursite.com/img/your-logo.png', // URL to your notification icon
+        autoSubscribe: false, // If true, prompts a user to subscribe for pushes upon SDK initialization which is not recommended
+        serviceWorker: {
+          url: 'sw.js',
+          applicationServerPublicKey: 'BBR9_y7sJXX29nouTmykOXgJIXADeWnERTbJ7WiwZkfrz2QCohrk_BtKVp09rcZIxZgnHN0D5GVcQFf04SGEPx4'
+        }
+      }])
+    </script>
     <link rel='stylesheet' href='https://redirector.gservice.emarsys.net/ui/latest/css/app.css'>
-    <link rel='stylesheet' href='style.css'>
 </head>
     <body>
       <header class="header">
@@ -24,7 +37,7 @@
               Web Push Training
             </h1>
             <p>
-              <button class="e-btn e-btn-secondary" onclick="#">Subscribe</button>
+              <button class="e-btn e-btn-secondary" onclick="subscribe()">Subscribe</button>
             </p>
             <p>
               <div>
@@ -39,12 +52,13 @@
               <div>
                 <form id="customEventForm">
                   <input class="e-input e-input-large" type="text" name="customEvent" placeholder="Custom event">
-                  <button id="loginButton" class="e-btn e-btn-primary" type="submit">Track Custom Event</button>
+                  <button id="customEventButton" class="e-btn e-btn-primary" type="submit">Track Custom Event</button>
                 </form>
               </div>
             </p>
           </div>
         </div>
+
         <div id="footer">
         </div>
       </header>
@@ -59,18 +73,18 @@
             fieldValue: fieldValue
           }
           console.log('Contact Info: ' + JSON.stringify(contactInfo))
-          // WebEmarsysSdk.login(contactInfo);
+          WebEmarsysSdk.login(contactInfo);
         })
 
         $('#customEventForm').submit(function(e) {
           e.preventDefault();
           const customEvent = $('#customEventForm input[name="customEvent"]').val()
           console.log('Custom Event: ' + customEvent)
-          // WebEmarsysSdk.trackCustomEvent(customEvent)
+          WebEmarsysSdk.trackCustomEvent(customEvent)
         })
 
         function subscribe() {
-          // WebEmarsysSdk.subscribe();
+          WebEmarsysSdk.subscribe();
         }
       </script>
     </body>
