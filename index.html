@@ -82,7 +82,11 @@
           e.preventDefault();
           const customEvent = $('#customEventForm input[name="customEvent"]').val()
           console.log('Custom Event: ' + customEvent)
-          
+          WebEmarsysSdk.customEvent(customEvent, { k1: 'v1', k2: 'v2' }).then((success) => {
+            console.log('Sending custom event result:', success)
+          }).catch(err => {
+            console.error('Error during custom event sending', err)
+          })
         })
 
         function subscribe() {
