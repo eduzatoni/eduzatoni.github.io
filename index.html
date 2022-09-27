@@ -15,6 +15,22 @@
     <script src="https://redirector.gservice.emarsys.net/ui/latest/js/app.js"></script>
     <link rel='stylesheet' href='https://redirector.gservice.emarsys.net/ui/latest/css/app.css'>
     <link rel='stylesheet' href='style.css'>
+
+    <script type="text/javascript" src="https://assets.emarsys.net/web-emarsys-sdk/4.2.0/web-emarsys-sdk.js" async></script>
+    <script type="text/javascript">
+      var WebEmarsysSdk = WebEmarsysSdk || []
+            WebEmarsysSdk.push(['init', {
+              applicationCode: 'EMS9E-F995A', // your Domain code obtained above
+              safariWebsitePushID: 'web.ems.training', //  unique reverse-domain string, obtained in you Apple Developer Portal
+              defaultNotificationTitle: 'Your Default Title', // sets your default title for push notifications
+              defaultNotificationIcon: 'https://yoursite.com/img/your-logo.png', // URL to your notification icon
+              autoSubscribe: false, // If true, prompts a user to subscribe for pushes upon SDK initialization which is not recommended
+              serviceWorker: {
+                url: 'sw.js',
+                applicationServerPublicKey: 'BBR9_y7sJXX29nouTmykOXgJIXADeWnERTbJ7WiwZkfrz2QCohrk_BtKVp09rcZIxZgnHN0D5GVcQFf04SGEPx4'
+              }
+        }])
+    </script>
 </head>
     <body>
       <header class="header">
@@ -30,7 +46,7 @@
               <div>
                 <form id="loginForm">
                   <input class="e-input e-input-small" type="text" name="contactFieldId" placeholder="Field ID">
-                  <input class="e-input e-input-large" type="text" name="contactFieldValue" placeholder="Contact value">
+                  <input class="e-input e-input-large" type="text" name="contactFieldValue" placeholder="Contact Field Value">
                   <button id="loginButton" class="e-btn e-btn-primary" type="submit">Set Contact</button>
                 </form>
               </div>
@@ -70,7 +86,7 @@
         })
 
         function subscribe() {
-          
+          WebEmarsysSdk.subscribe()
         }
       </script>
     </body>
