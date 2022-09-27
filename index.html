@@ -75,7 +75,7 @@
             fieldValue: fieldValue
           }
           console.log('Contact Info: ' + JSON.stringify(contactInfo))
-          
+          WebEmarsysSdk.login(contactInfo)
         })
 
         $('#customEventForm').submit(function(e) {
