@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Push Training</title>
+  <script
+    src="https://code.jquery.com/jquery-1.12.4.js"
+    integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+    crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous">
+  </script>
+  <script src="https://redirector.gservice.emarsys.net/ui/latest/js/app.js"></script>
+  <link rel='stylesheet' href='https://redirector.gservice.emarsys.net/ui/latest/css/app.css'>
+
+</head>
+  <body>
+    <header class="header">
+      <div class="e-container">
+        <div class="e-box">
+          <h1>
+            Web Push Training
+          </h1>
+          <p>
+            <div>
+              <form id="loginForm">
+                <input class="e-input e-input-large" type="text" name="email" placeholder="Email"></p>
+                <input class="e-input e-input-large" type="password" name="password" placeholder="Password"></p>
+                <button id="loginButton" class="e-btn e-btn-primary" type="submit">Login</button>
+              </form>
+            </div>
+          </p>
+        </div>
+      </div>
+      <div id="footer">
+      </div>
+    </header>
+
+    <script>
+      $('#loginForm').submit(function(e) {
+        e.preventDefault();
+        const email = $('#loginForm input[name="email"]').val();
+        const password = $('#loginForm input[name="password"]').val();
+
+        try {
+          const contact = getContactByEmail(email);
+
+          if (autheticate(contact, email, password)) {
+            const contactInfo = {
+              fieldId: 412124, 
+              fieldValue: contact.identifier
+            };
+            console.log('Contact Info: ' + JSON.stringify(contactInfo));
+            
+            // login
+
+            alert("You're logged in!");
+            window.location.href = 'index.html';
+          } 
+        } catch(e) {
+          alert('Error: ' + e);
+        }
+      })
+
+      function autheticate(contact, email, password) {
+        if (contact.password === password) {
+          console.log('login success');
+          return true;
+        }
+        throw 'Login failed'
+      }
+
+      function getContactByEmail(email) {
+        const contacts = getContacts();
+        const contact = contacts.find(obj => {
+          return obj.email === email;
+        })
+        if (contact === undefined) {
+          throw 'Can not find contact';
+        }
+        return contact;
+      }
+
+      // CONTACT DB
+      function getContacts() {
+        return [
+          {
+            "email": "dracula@emarsys.com",
+            "password": "123456",
+            "identifier": "COceqLSFgh"
+          },
+          {
+            "email": "elizabeth@emarsys.com",
+            "password": "123456",
+            "identifier": "HMsz5TRWhd"
+          },
+          {
+            "email": "santa.claus@emarsys.com",
+            "password": "123456",
+            "identifier": "LtPyBTs5i0"
+          },
+          {
+            "email": "neil.armstrong@emarsys.com",
+            "password": "123456",
+            "identifier": "YeFgP31Gfh"
+          }
+        ];
+      }
+    </script>
+  </body>
+</html>
