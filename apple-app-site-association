@@ -21,6 +21,10 @@
             {
                 "appID":"424XYUJV68.com.ems.lifestyleLabels",
                 "paths": ["*"]
+            },
+            {
+                "appID":"4J5FXBB97U.com.ems.lifestyleLabels2",
+                "paths": ["*"]
             }
         ]
     }
